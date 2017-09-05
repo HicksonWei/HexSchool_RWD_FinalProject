@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/animate.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <title>六角西餐廳</title>
 </head>
+
 <body>
     <div class="wrap">
         <div class="nav_container">
@@ -17,15 +20,21 @@
                 <div class="logo">
                     <h1><a href="#">六角西餐廳</a></h1>
                 </div>
-                <ul class="menu">
-                    <li><a href="">特色</a></li>
-                    <li><a href="">主廚</a></li>
-                    <li><a href="">地圖</a></li>
+                <span class="rwdMenu">&#xf0c9;</span>
+                <div class="menu">
+                    <ul>
+                        <li><a href="page_cart.html">線上訂購</a></li>
+                        <li><a href="page_register.html">註冊</a></li>
+                        <li><a href="page_login.html">登入</a></li>
+                    </ul>
+                </div>
+                <ul class="position">
+                    <li><a href="#secret" class="p1">特色</a></li>
+                    <li><a href="#chef" class="p2">主廚</a></li>
+                    <li><a href="#map" class="p3">地圖</a></li>
                 </ul>
             </div>
         </div>
-        
-            
         <div class="header">
             <div class="banner">
                 <h2>咬一口就無法忘懷的漢堡</h2>
@@ -33,7 +42,7 @@
                 <p><span class="fa fa-cutlery"></span>六角大漢堡<span class="fa fa-cutlery"></span></p>
             </div>
         </div>
-        <div class="secret">
+        <div class="secret" id="secret">
             <h2>
                 <p>
                     <span>客人總是在詢問</span>
@@ -42,25 +51,32 @@
             </h2>
             <ul>
                 <li>
-                    <img src="img/feature_1.png" alt="">  
-                    <h3>台灣本土蔬菜</h3>  
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus deleniti et perferendis quas minus. Molestiae saepe harum, minus, enim, qui similique tenetur magni sint explicabo, cumque repellat! Quisquam, eaque! Repellat velit, dolore magnam sed, blanditiis id ut corrupti quae commodi.</p>
+                    <img src="img/feature_1.png" alt="">
+                    <h3>台灣本土蔬菜</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus deleniti et perferendis quas minus. Molestiae
+                        saepe harum, minus, enim, qui similique tenetur magni sint explicabo, cumque repellat! Quisquam,
+                        eaque! Repellat velit, dolore magnam sed, blanditiis id ut corrupti quae commodi.</p>
                 </li>
                 <li>
-                    <img src="img/feature_2.png" alt="">  
-                    <h3>專業米其林廚師</h3>  
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quasi officia iusto fugit voluptas, esse distinctio necessitatibus dolorem totam obcaecati ullam dicta ipsa voluptatum eos unde omnis ex provident? Voluptas quis suscipit nam facilis, nulla ab ducimus accusantium nostrum molestiae ut adipisci veniam! Corporis, dolorum, vitae. Ab facere, soluta accusantium.</p>
+                    <img src="img/feature_2.png" alt="">
+                    <h3>專業米其林廚師</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quasi officia iusto fugit voluptas,
+                        esse distinctio necessitatibus dolorem totam obcaecati ullam dicta ipsa voluptatum eos unde omnis
+                        ex provident? Voluptas quis suscipit nam facilis, nulla ab ducimus accusantium nostrum molestiae
+                        ut adipisci veniam! Corporis, dolorum, vitae. Ab facere, soluta accusantium.</p>
                 </li>
                 <li>
-                    <img src="img/feature_3.png" alt="">  
-                    <h3>對於專業不能退讓</h3>  
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta omnis impedit molestias, sint dicta. Commodi vel, nulla dolorem doloremque tenetur facilis necessitatibus adipisci inventore illum, accusantium blanditiis doloribus placeat eum.</p>
+                    <img src="img/feature_3.png" alt="">
+                    <h3>對於專業不能退讓</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta omnis impedit molestias, sint dicta.
+                        Commodi vel, nulla dolorem doloremque tenetur facilis necessitatibus adipisci inventore illum, accusantium
+                        blanditiis doloribus placeat eum.</p>
                 </li>
-            </ul>   
-            <div class="clr"></div>    
+            </ul>
+            <div class="clr"></div>
         </div>
-       
-        <div class="chef">
+
+        <div class="chef" id="chef">
             <ul>
                 <li>
                     <img src="img/main_chef_brown.png" alt="">
@@ -70,7 +86,11 @@
                         今日主廚：帕金森•梅在帕
                         <p>Tody Chef: Plum in Shock</p>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, praesentium sint iusto aperiam tenetur officia optio deserunt expedita harum! Accusantium reprehenderit ipsam architecto quis quas facere animi, modi veritatis consectetur iusto error ullam ratione illo? Magni necessitatibus deserunt veniam consequuntur perferendis. Suscipit consequuntur explicabo at, ea officia blanditiis qui error similique voluptates natus, illum, aspernatur deleniti magni veritatis sunt dolore.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, praesentium sint iusto aperiam tenetur
+                        officia optio deserunt expedita harum! Accusantium reprehenderit ipsam architecto quis quas facere
+                        animi, modi veritatis consectetur iusto error ullam ratione illo? Magni necessitatibus deserunt veniam
+                        consequuntur perferendis. Suscipit consequuntur explicabo at, ea officia blanditiis qui error similique
+                        voluptates natus, illum, aspernatur deleniti magni veritatis sunt dolore.</p>
                 </li>
             </ul>
             <div class="clr"></div>
@@ -105,7 +125,7 @@
             </ul>
             <div class="clr"></div>
         </div>
-        <div class="reservation">
+        <div class="reservation" id="map">
             <h2>
                 <p>我們的位置不太夠坐</p>
                 <p>要不要先訂位呢?</p>
@@ -116,22 +136,22 @@
             <div class="form">
                 <form action="">
                     <p>姓名</p>
-                    <input type="text" size="50" placeholder="六角講師吃尾牙" class="text">
+                    <input type="text"  placeholder="六角講師吃尾牙" class="text">
                     <p>電話</p>
-                    <input type="text" size="50" placeholder="02 - 1234567" class="text">
+                    <input type="text"  placeholder="02 - 1234567" class="text">
                     <p>信箱</p>
-                    <input type="text" size="50" placeholder="test@gmail.com" class="text">
+                    <input type="text"  placeholder="test@gmail.com" class="text">
                     <p>人數</p>
-                    <input type="text" size="50" class="text">
+                    <input type="text"  class="text">
                     <p>是否需要素食</p>
                     <input type="radio" name="vegetarian" value="yes">是
                     <input type="radio" name="vegetarian" value="no" checked>否
                     <br><br>
-                        <div class="button">
-                            <input type="reset" value="取消" class="reset pure-button pure-button-reset">
-                            <input type="submit" value="送出" class="submit pure-button pure-button-submit">
-                        </div>
-                    
+                    <div class="button">
+                        <input type="reset" value="取消" class="reset pure-button pure-button-reset">
+                        <input type="submit" value="送出" class="submit pure-button pure-button-submit">
+                    </div>
+
                 </form>
             </div>
             <div class="clr"></div>
@@ -139,7 +159,9 @@
         <ul class="footer">
             <li class="about">
                 <h2>關於 六角西餐廳</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab voluptatum soluta nihil, cupiditate laborum molestiae nemo quo, aperiam porro culpa sunt error aliquid excepturi qui, ratione tempore unde deserunt!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab voluptatum soluta nihil, cupiditate
+                    laborum molestiae nemo quo, aperiam porro culpa sunt error aliquid excepturi qui, ratione tempore unde
+                    deserunt!</p>
             </li>
             <li class="connect">
                 <h2>聯絡方式</h2>
@@ -156,7 +178,7 @@
                 <ul class="community">
                     <li class="google"><a href=""></a></li>
                     <li class="twitter"><a href=""></a></li>
-                    <li class="fb"><a href=""></a></li>    
+                    <li class="fb"><a href=""></a></li>
                 </ul>
             </li>
         </ul>
@@ -166,4 +188,5 @@
 
     <script src="js/all.js"></script>
 </body>
+
 </html>

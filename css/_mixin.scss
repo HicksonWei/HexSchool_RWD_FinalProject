@@ -2,7 +2,16 @@ $font-all: "Microsoft JhengHei",PMingLiU,MingLiu,"Segoe UI",Helvetica,Garuda,Ari
 $color-top: #fff;
 $color-b: #EFE9E7;
 $color-d: #3D1101;
+$font-xs: 12px;
 $font-s: 16px;
 $font-m: 18px;
 $font-l: 20px;
+$iPhone5: 320px;
+$iPad: 768px;
 
+
+@mixin rwd($width){
+    @media(max-width: $width){
+        @content;
+    }
+}
