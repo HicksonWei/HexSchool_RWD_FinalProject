@@ -1,11 +1,29 @@
-$font-all: "Microsoft JhengHei",PMingLiU,MingLiu,"Segoe UI",Helvetica,Garuda,Arial,sans-serif;
-$color-top: #fff;
-$color-b: #EFE9E7;
-$color-d: #3D1101;
-$font-xs: 12px;
-$font-s: 16px;
-$font-m: 18px;
-$font-l: 20px;
+//font
+$font-family-base: "Microsoft JhengHei", "Segoe UI", Helvetica, Garuda, Arial, sans-serif;
+$font-size-base: 1rem;
+$font-size-xl: 1.5rem; //24px
+$font-size-lg: 1.25rem; //20px
+$font-size-sm: .875rem; //14px
+$font-size-xs: .75rem; //12px
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem; //32px
+$h3-font-size: 1.75rem; //28px
+$h4-font-size: 1.5rem; // 24px
+$h5-font-size: 1.25rem; // 20px
+$h6-font-size: 1rem; 
+
+//color
+$colors: (
+    white: #FFFFFF,
+    black: #000000,
+    light-bg: #F6F4F3,
+    dark-bg: #EFE9E7,
+    shadow: #888888,
+    brown: #3D1101,
+    orange: #F56C23
+);
+
+//breakpoint
 $iPhone5: 320px;
 $iPad: 768px;
 
@@ -13,5 +31,19 @@ $iPad: 768px;
 @mixin rwd($width){
     @media(max-width: $width){
         @content;
+    }
+}
+
+@mixin input_private{
+    padding: 5px;
+    border-radius: 5px;
+    border-top: 2px inset rgba(0, 0, 0, 0.5);
+    border-left: 2px inset rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 20px;
+    width: 100%;
+    &:focus{
+        outline: 2px solid rgba(245, 108, 35, 0.7);
     }
 }

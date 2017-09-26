@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="無法忘懷的漢堡">
+	<meta neme="keyword" content="漢堡, 西餐, 六角, 米其林">
+	<meta property="og:title" content="六角西餐廳">
+	<meta property="og:description" content="咬一口就無法忘懷的漢堡">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.hex-restaurant.com/">
+    <meta property="og:image" content="img/header_mobile.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://www.hex-restaurant.com/">
+    <meta name="twitter:title" content="六角西餐廳">
+    <meta name="twitter:description" content="咬一口就無法忘懷的漢堡">
+    <meta name="twitter:image" content="img/header_mobile.png">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="img/burger.ico">
     <script src="js/jquery-3.2.1.min.js"></script>
     <title>六角西餐廳</title>
 </head>
@@ -18,9 +31,13 @@
         <div class="nav_container">
             <div class="navbar">
                 <div class="logo">
-                    <h1><a href="#">六角西餐廳</a></h1>
+                    <h1><a href="#" class="halt">六角西餐廳</a></h1>
                 </div>
-                <span class="rwdMenu">&#xf0c9;</span>
+                <ul class="rwd_catalog">
+                    <li>
+                        <span class="rwd_menu">&#xf0c9;</span>
+                    </li>
+                </ul>
                 <div class="menu">
                     <ul>
                         <li><a href="index.html">首頁</a></li>
@@ -38,33 +55,33 @@
             </div>
         </div>
         <div class="content_child">
-            <img src="img/logo_l@svg.svg" alt="">
+            <img src="img/logo_l@svg.svg" alt="logo">
             <p>享受美食好味道</p>
-            <div class="login">
-                <h3>LOGIN</h3>
-                <form action="">
+            <div class="login_block">
+                <h5>LOGIN</h5>
+                <form>
                     <p>Email Address*</p>
-                    <input type="email" class="text" placeholder="&#xf003"><br><br>
+                    <input type="email" placeholder="&#xf003"><br><br>
                     <p>Password*</p>
-                    <input type="password" class="text" placeholder="&#xf023"><br>
-                    <a href="" class="mention">忘記密碼?</a>
-                    <div class="button">
-                        <a href="page_register.html" class="pure-button pure-button-reset">註冊</a>
-                        <input type="submit" value="登入" class="submit pure-button pure-button-submit">
+                    <input type="password" placeholder=" &#xf023"><br>
+                    <a href="#" class="mention halt">忘記密碼?</a>
+                    <div class="button_block">
+                        <a href="page_register.html" class="pure-button pure-button-register">註冊</a>
+                        <input type="submit" value="登入" class="pure-button pure-button-submit">
                     </div>
                 </form>
             </div>
         </div>
         <ul class="footer">
             <li class="about">
-                <h2>關於 六角西餐廳</h2>
+                <h4>關於 六角西餐廳</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab voluptatum soluta nihil, cupiditate
                     laborum molestiae nemo quo, aperiam porro culpa sunt error aliquid excepturi qui, ratione tempore unde
                     deserunt!
                 </p>
             </li>
             <li class="connect">
-                <h2>聯絡方式</h2>
+                <h4>聯絡方式</h4>
                 <ul>
                     <li>高雄市中正五路到底</li>
                     <li>+886 886 886</li>
@@ -76,13 +93,13 @@
                     <h2><a href="#">六角西餐廳</a></h2>
                 </div>
                 <ul class="community">
-                    <li class="google"><a href=""></a></li>
-                    <li class="twitter"><a href=""></a></li>
-                    <li class="fb"><a href=""></a></li>
+                    <li class="google"><a href="#" class="halt"></a></li>
+                    <li class="twitter"><a href="#" class="halt"></a></li>
+                    <li class="fb"><a href="#" class="halt"></a></li>
                 </ul>
             </li>
         </ul>
-        <div class="clr"></div>
+        <div class="clearfix"></div>
     </div>
     <script src="js/all.js"></script>
 </body>

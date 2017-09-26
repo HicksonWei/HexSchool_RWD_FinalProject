@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="無法忘懷的漢堡">
+	<meta neme="keyword" content="漢堡, 西餐, 六角, 米其林">
+	<meta property="og:title" content="六角西餐廳">
+	<meta property="og:description" content="咬一口就無法忘懷的漢堡">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.hex-restaurant.com/">
+    <meta property="og:image" content="img/header_mobile.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://www.hex-restaurant.com/">
+    <meta name="twitter:title" content="六角西餐廳">
+    <meta name="twitter:description" content="咬一口就無法忘懷的漢堡">
+    <meta name="twitter:image" content="img/header_mobile.png">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="img/burger.ico">
     <script src="js/jquery-3.2.1.min.js"></script>
     <title>六角西餐廳</title>
 </head>
@@ -18,14 +31,25 @@
         <div class="nav_container">
             <div class="navbar">
                 <div class="logo">
-                    <h1><a href="#">六角西餐廳</a></h1>
+                    <h1><a href="#" class="halt">六角西餐廳</a></h1>
                 </div>
-                <span class="rwdMenu">&#xf0c9;</span>
+                <ul class="rwd_catalog">
+                    <li class="rwd_cart">
+                        <a href="#" class="fa fa-shopping-cart fa-2x cart halt">
+                            <div class="total">
+                                <span></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="rwd_menu">&#xf0c9;</span>
+                    </li>
+                </ul>
                 <div class="menu">
                     <ul>
                         <li><a href="index.html">首頁</a></li>
-                        <li><a href="">註冊</a></li>
-                        <li><a href="">登入</a></li>
+                        <li><a href="page_register.html">註冊</a></li>
+                        <li><a href="page_login.html">登入</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +63,7 @@
         </div>
         <div class="content">
             <div class="aside">
-                <h2><span class="fa fa-envira"></span>線上訂購美食</h2>
+                <h4><span class="fa fa-envira"></span>線上訂購美食</h4>
                 <ul>
                     <li class="all">全部(14)</li>
                     <li class="burger-link">不敗漢堡系列(4)</li>
@@ -55,18 +79,18 @@
                     </button>
                     <ul>
                         <li>
-                            <a href="" class="checkout">結帳去</a>
+                            <a href="#" class="checkout halt">結帳去</a>
                         </li>
                         <li class="frame">
-                            <a href="" class="fa fa-shopping-cart fa-2x cart">
-                                <div class="circle">
+                            <a href="#" class="fa fa-shopping-cart fa-2x cart halt">
+                                <div class="total">
                                     <span></span>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="clr"></div>
+                <div class="clearfix"></div>
                 <div class="list">
                     <ul>
                         <li class="brunch">
@@ -82,7 +106,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -104,7 +128,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -126,7 +150,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -148,7 +172,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -170,7 +194,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -192,7 +216,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -214,7 +238,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -236,7 +260,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -258,7 +282,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -280,7 +304,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -302,7 +326,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -324,7 +348,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -346,7 +370,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">130</span>
+                                        <span class="number">100</span>
                                     </p>
                                 </div>
                                 <div class="add">
@@ -368,7 +392,7 @@
                                 <div class="dollars">
                                     <p class="container">
                                         <span class="symbol">＄</span>
-                                        <span class="number">699</span> 
+                                        <span class="number">100</span> 
                                     </p>
                                 </div>
                                 <div class="add">
@@ -380,17 +404,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="clr"></div>
+            <div class="clearfix"></div>
         </div>
         <ul class="footer">
             <li class="about">
-                <h2>關於 六角西餐廳</h2>
+                <h4>關於 六角西餐廳</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab voluptatum soluta nihil, cupiditate
                     laborum molestiae nemo quo, aperiam porro culpa sunt error aliquid excepturi qui, ratione tempore unde
                     deserunt!</p>
             </li>
             <li class="connect">
-                <h2>聯絡方式</h2>
+                <h4>聯絡方式</h4>
                 <ul>
                     <li>高雄市中正五路到底</li>
                     <li>+886 886 886</li>
@@ -399,16 +423,28 @@
             </li>
             <li>
                 <div class="footer-logo">
-                    <h2><a href="#">六角西餐廳</a></h2>
+                    <h2><a href="#" class="halt">六角西餐廳</a></h2>
                 </div>
                 <ul class="community">
-                    <li class="google"><a href=""></a></li>
-                    <li class="twitter"><a href=""></a></li>
-                    <li class="fb"><a href=""></a></li>
+                    <li class="google"><a href="#" class="halt"></a></li>
+                    <li class="twitter"><a href="#" class="halt"></a></li>
+                    <li class="fb"><a href="#" class="halt"></a></li>
                 </ul>
             </li>
         </ul>
-        <div class="clr"></div>
+        <div class="clearfix"></div>
+        <div class="bottom_container">
+            <div class="bottom_bar">
+                <div class="item item_search"></div>
+                <div class="item item_input">
+                    <input type="search" placeholder="搜尋..." autofocus>
+                </div>
+                <div class="item item_burger"></div>
+                <div class="item item_brunch"></div>
+                <div class="item item_other"></div>
+            </div>
+        </div>
     </div>
     <script src="js/all.js"></script>
+    <script src="js/scroll.js"></script>
 </body>

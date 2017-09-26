@@ -2,7 +2,7 @@
     max-width: 1024px;
     margin: 0 auto;
     position: relative;
-    font-family: $font-all;
+    font-family: $font-family-base;
     overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .navbar{
-    background: #000;
+    background: map-get($colors, black);
     height: 56px;
     max-width: 1024px;
     opacity: 0.8;
@@ -37,26 +37,71 @@
 }
 @include rwd($iPad){
     .logo{
-        margin: 16px 10px;
+        margin: 16px 15px;
     }
-   
 }
 
-.rwdMenu{
-    display: none;
-    color: $color-top;
+.rwd_catalog{
     float: right;
-    font-family: "FontAwesome";
-    line-height: 56px;
-    font-size: $font-m*1.5;
-    margin-right: 10px;
+    li{
+        float: left;
+    }
+    .rwd_cart{
+        display: none;
+        height: 56px;
+        margin-right: 20px;
+        a{
+            text-decoration: none;
+            display: block;
+            color: map-get($colors, white);
+            height: 100%;
+            padding-top: 10px;
+        }
+        .cart{
+            position: relative;
+            width: 32px;
+            height: 32px;
+            .total{
+                background: map-get($colors, orange);
+                position: absolute;
+                top: 3px;
+                right: -8px;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                border: 1px solid map-get($colors, dark-bg);
+                border-radius: 10px;
+                font-size: 5px;
+                color: map-get($colors, white);
+                display: none;
+            }
+        }
+    }
+    .rwd_menu{
+        display: none;
+        color: map-get($colors, white);
+        float: right;
+        font-family: "FontAwesome";
+        line-height: 56px;
+        font-size: $font-size-xl;
+        margin-right: 10px;
+    }
+}
+@include rwd(900px){
+    .rwd_catalog{
+        .rwd_cart{
+            display: block;
+        }
+    }
 }
 @include rwd($iPad){
-    .rwdMenu{
-        display: block;
-    }
+    .rwd_catalog{
+        .rwd_menu{
+            display: block;
+        }
+    } 
 }
-
 
 .menu{
     display: none;
@@ -69,8 +114,7 @@
                 display: block;
                 text-decoration: none;
                 width: 100%;
-                color: $color-top;
-            
+                color: map-get($colors, white);
             }   
         }
     }
@@ -86,7 +130,7 @@
 		right: 0;
 		z-index: 100;
 		transition: max-height 1s ease-in; 
-        background: #FF5E45;
+        background: map-get($colors, orange);
         ul{
             width: 100%;
             text-align: center;
@@ -96,9 +140,7 @@
                 padding: 20px 0;
             }
         }
-        
-    }
-    
+    }  
 }
 
 .pop{
@@ -113,16 +155,19 @@
         text-align: center;
         a{
             display: block;
-            color: $color-top;
+            color: map-get($colors, white);
             text-decoration: none;
             width: 100%;
             line-height: 56px;
+            font-size: $font-size-base;
         }
     }
 }
-
-
-
+@include rwd($iPad){
+    .position{
+        display: none;
+    }
+}
 
 .header{
     background-image: url('../img/header_desktop.png');
@@ -133,28 +178,29 @@
     overflow: hidden;
     .banner{
         background: rgba(0, 0, 0, 0.5);
-        height: 150px;
+        height: auto;
         width: 450px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        color: $color-top;
+        color: map-get($colors, white);
         text-align: center;
+        padding-bottom: 20px;
         h2{
-            font-size: $font-m*2;
+            font-size: $h2-font-size;
+            line-height: 36px;
             margin: 20px;
         }
         p{
-            font-size: $font-s;
-            line-height: 20px;
+            font-size: $font-size-base;
+            line-height: 24px;
             span{
                 margin: 0 5px;
             }
         }
     }
 }
-
 @include rwd($iPad){
     .header{
         .banner{
@@ -162,32 +208,37 @@
         }
     }
 }
-
+@include rwd($iPhone5){
+    .header{
+        background-image: url('../img/header_mobile.png');
+        background-position: center;
+    }
+}
 
 .secret{
-    background: #efe9e7;
+    background: map-get($colors, dark-bg);
     height: auto;
     padding-top: 50px;
-    color: $color-d;
-    h2{
+    color: map-get($colors, brown);
+    h4{
         width: 60%;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid map-get($colors, black);
         text-align: center;
         position: relative;
         margin: 30px auto;
-        font-size: $font-l;
+        font-size: $h4-font-size;
         line-height: 1.5;
         p{
             position: absolute;
+            width: 280px;
             padding: 0 10px;
-            bottom: -30px;
+            bottom: -36px;
             z-index: 100;
-            background: #efe9e7;
+            background: map-get($colors, dark-bg);
             left: 50%;
             transform: translateX(-50%);
             span{
                 display: block;
-                text-align: center;
                 font-weight: bold;
             }
         }    
@@ -201,9 +252,9 @@
         text-align: center;
         margin: 20px 0;
         padding: 10px;
-        h3{
+        h5{
             margin: 20px 0;
-            font-size: $font-m;
+            font-size: $h5-font-size;
         }
         img{
             border-radius: 100px;
@@ -212,57 +263,93 @@
             text-align: justify;
             padding: 0 20px;
             line-height: 20px;
+            font-size: $font-size-base;
         }
     }
-    
+}
+@include rwd($iPad){
+    .secret{
+        h4{
+            margin: 10px auto;
+            border-bottom: none;
+            width: 100%;
+            p{
+                position: static;
+                transform: none;
+                width: auto;
+            }
+        }
+        li{
+            width: 100%;
+        }
+    }
 }
 
-.clr{
+.clearfix::after{
+    content: "";
+    display: block;
     clear: both;
 }
 
 .chef{
-    color: $color-b;
+    color: map-get($colors, dark-bg);
     background: #3D1101;
     height: auto;
     ul{
         float: right;
-    }
-    li{
-        float: left;
-        width: 47%;
-        margin: 0 0 0 3%;
-        img{
-            display: block;
-        }
-        h3{
-            font-size: $font-l;
-            margin-top: 40px;
-            p{
-                font-size: $font-s;
-                margin-top: 20px;
+        li{
+            float: left;
+            width: 47%;
+            margin: 0 0 0 3%;
+            img{
+                display: block;
+            }
+            h5{
+                font-size: $h5-font-size;
+                margin-top: 40px;
+                p{
+                    font-size: $font-size-base;
+                    font-weight: bold;
+                    font-style: italic;
+                    margin-top: 20px;
+                }
+            }
+            >p{
+                font-size: $font-size-base;
+                text-align: justify;
+                padding: 10px 20px 20px 0;
+                line-height: 20px;
             }
         }
-        >p{
-            font-size: $font-s;
-            text-align: justify;
-            padding: 10px 20px 20px 0;
-            line-height: 20px;
-
+    }
+}
+@include rwd($iPad){
+    .chef{
+        ul{
+            li{
+                width: 100%;
+                margin: 0;
+                text-align: center;
+                img{
+                    margin: 0 auto;
+                }
+                >p{
+                    padding: 20px;
+                }
+            }
         }
     }
 }
 
 .feedback{
     height: auto;
-    background: #EFE9E7;
-    color: $color-d;
-    h2{
+    background: map-get($colors, dark-bg);
+    color: map-get($colors, brown);
+    h4{
         text-align: center;
-        font-size: $font-s*1.5;
+        font-size: $h4-font-size;
         padding: 50px 0 30px 0;
         font-weight: bold;
-
     }
     ul{
         float: right;
@@ -274,94 +361,140 @@
                 float: left;
                 border-radius: 33.5px;
             }
-            .text-box{
+            .impression{
                 overflow: hidden;
                 padding-left: 10px;
-                h3{
+                h5{
                     margin: 20px 0;
-                    font-size: $font-m;
+                    font-size: $h5-font-size;
                 }
                 p{
                     line-height: 1.5;
+                    font-size: $font-size-base;
                 }
                 span{
                     display: block;
                     text-align: right;
                     line-height: 3;
+                    font-size: $font-size-base;
                 }
             }
         }
     }   
 }
+@include rwd($iPad){
+    .feedback{
+        ul{
+            li{
+                width: 92%;
+                margin: 4%;
+            }
+        }
+    }
+}
 
 .reservation{
     height: auto;
-    background: #F6F4F3;
-    color: $color-d;
+    background: map-get($colors, light-bg);
+    color: map-get($colors, brown);
     padding: 50px;
-    h2{
+    h4{
         text-align: center;
-        font-size: $font-s*1.5;
+        font-size: $h4-font-size;
         line-height: 30px;
         padding-bottom: 40px;
         font-weight: bold;
     }
-    .map{
-        float: left;
-        width: 50%;
-    }
-    .form{
-        float: left;
-        width: 50%;
-        padding: 20px 20px 20px 40px;
-        p{
-            margin: 10px 0;
+    ul{
+        li{
+            float: left;
+            width: 50%;
+            iframe{
+                width: 100%;
+                height: 350px;
+            }
         }
-        .text{
-            padding: 5px;
-            border-radius: 5px;
-            border-top: 2px inset rgba(0, 0, 0, 0.5); 
-            border-left: 2px inset rgba(0, 0, 0, 0.5);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
-        .text:focus{
-            outline: 2px solid rgba(245, 108, 35, 0.7);
-        }
-        .button{
-            float: right;
-        }
-
-        .reset{
-            margin: 0 10px;
-            padding: 5px 20px;
-        }
-        .submit{
-            float: right;
-            padding: 5px 20px;
+        .form{
+            padding: 0 20px 20px 40px;
+            p{
+                margin: 10px 0;
+                font-size: $font-size-base;
+            }
+            input[type='text']{
+                @include input_private;
+                font-size: $font-size-base;
+            }
+            .button{
+                float: right;
+            }
+            input[type='reset']{
+                margin: 0 10px;
+                padding: 5px 20px;
+                font-size: $font-size-base;
+            }
+            input[type='submit']{
+                float: right;
+                padding: 5px 20px;
+                font-size: $font-size-base;
+            }
         }
     }
-
+}
+@include rwd($iPad){
+    .reservation{
+        padding: 40px 20px 20px 20px;
+        ul{
+            li{
+                width: 100%;
+                img{
+                    margin: 0 auto;
+                }
+            }
+            .form{
+                padding: 20px 0;
+            }
+        }
+    }
+}
+@include rwd($iPhone5){
+    .reservation{
+        ul{
+            .form{
+                .button{
+                    float: none;
+                }
+                input[type='reset']{
+                    width: 100%;
+                    margin: 0;
+                }
+                input[type='submit']{
+                    width: 100%;
+                    float: none;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
 }
 
 .footer{
     float: left;
     height: auto;
-    background: #EFE9E7;
-    padding: 30px 0;
-    color: $color-d;
+    background: map-get($colors, dark-bg);
+    padding: 30px 0 70px 0;
+    color: map-get($colors, brown);
     >li{
         float: left;
         width: 33.3333%;
         padding: 20px;
-        h2{
-            font-size: $font-s*1.5;
+        h4{
+            font-size: $h4-font-size;
             margin-bottom: 20px;
         }
         p{
             line-height: 20px;
             text-align: justify;
+            font-size: $font-size-base;
         }
     }
     .connect{
@@ -370,6 +503,7 @@
             li{
                 margin-left: 22px;
                 line-height: 20px;
+                font-size: $font-size-base;
             }
         }    
     }
@@ -418,7 +552,6 @@
         }
     }
 }
-
 @include rwd(800px){
     .footer{
         >li{
@@ -453,22 +586,21 @@
 // page_cart
 
 .content{
-    background: $color-b;
+    background: map-get($colors, dark-bg);
     height: auto;
     padding-top: 50px;
     padding-bottom: 30px;
-    clear: both;
 }
 
 .aside{
     float: left;
     width: 300px;
-    h2{
-        font-size: $font-l;
+    h4{
+        font-size: $h4-font-size;
         text-align: center;
         margin: 0 0 20px 0;
         span{
-            font-size: $font-l*1.5;
+            font-size: $h4-font-size;
             display: inline-block;
             margin-right: 10px;
         }
@@ -477,28 +609,33 @@
         height: 35px;
         width: 200px;
         line-height: 35px;
-        border-bottom: 1px solid $color-d; 
+        border-bottom: 1px solid map-get($colors, brown); 
         margin-left: 40px;
         padding-left: 5px;
-        color: $color-d;
+        color: map-get($colors, brown);
         cursor: pointer;
+        font-size: $font-size-base;
     }
     .trigger{
-        background: $color-d;
-        color: #fff;
+        background: map-get($colors, brown);
+        color: map-get($colors, white);
     }
     .on{
-        background: $color-d;
-        color: #fff;
+        background: map-get($colors, brown);
+        color: map-get($colors, white);
     }
 }
-
 @include rwd(900px){
     .aside{
         width: 250px;
         li{
             margin-left: 20px;
         }
+    }
+}
+@include rwd($iPad){
+    .aside{
+        display: none;
     }
 }
 
@@ -510,53 +647,52 @@
             float: left;
             display: block;
             height: 32px;
-            border: 2px solid $color-d;
+            border: 2px solid map-get($colors, brown);
             padding: 5px;
             width: 55%;
+            font-size: $font-size-lg;
         }
         button{
             float: left;
             display: block;
-            background: $color-d;
-            color: #fff;
+            background: map-get($colors, brown);
+            color: map-get($colors, white);
             height: 32px;
             width: 32px;
             span{
                 display: block;
-                font-size: $font-l;
+                font-size: $font-size-lg;
             }
         }
         ul{
             float: right;
-            font-size: $font-s;
+            font-size: $font-size-base;
             margin-right: 50px;
             li{
                 float: left;
-                // position: relative;
                 height: 50px;
                 width: 80px;
                 margin-top: 10px;
                 a{
                     text-decoration: none;
                     display: block;
-                    color: $color-d;
+                    color: map-get($colors, brown);
                 }
             }
-
             .frame{
                 margin-top: -1px;
                 margin-left: 15px; 
             }
             .checkout{
-                border-right: 2px solid $color-d;
+                border-right: 2px solid map-get($colors, brown);
                 text-align: center;
             }
             .cart{
                 position: relative;
                 width: 32px;
                 height: 32px;
-                .circle{
-                    background: #FE6850;
+                .total{
+                    background: map-get($colors, orange);
                     position: absolute;
                     top: -5px;
                     right: -8px;
@@ -564,10 +700,10 @@
                     height: 20px;
                     line-height: 20px;
                     text-align: center;
-                    border: 1px solid $color-b;
+                    border: 1px solid map-get($colors, dark-bg);
                     border-radius: 10px;
                     font-size: 5px;
-                    color: #fff;
+                    color: map-get($colors, white);
                     display: none;
                 }
             }
@@ -581,13 +717,13 @@
             height: auto;
             float: left;
             position: relative;
-            border: 1px solid #000;
+            border: 1px solid map-get($colors, black);
             .picture{
                 background-size: cover;
                 background-position: center;
                 height: 150px;
                 .heart{
-                    color: #fff;
+                    color: map-get($colors, white);
                     position: absolute;
                     top: 5px;
                     left: 5px;
@@ -601,21 +737,21 @@
             .text{
                 span{
                     text-align: center;
-                    color: $color-d;
+                    color: map-get($colors, brown);
                     display: block;
                 }
                 .name{
-                    font-size: $font-l;
+                    font-size: $font-size-lg;
                     margin-top: 15px;
                 }
                 .name_en{
-                    font-size: $font-xs;
+                    font-size: $font-size-sm;
                     margin-top: 5px;
                     margin-bottom: 10px;
                 }
                 .dollars{
                     position: relative;
-                    border-top: 1px solid $color-d;
+                    border-top: 1px solid map-get($colors, brown);
                     width: 45%;
                     height: 50px;
                     margin: 0 auto;
@@ -625,46 +761,43 @@
                         bottom: 0;
                         transform: translateX(-50%);
                         width: 60px;
-                        
                     }
                     .symbol{
                         display: inline-block;
+                        font-size: $font-size-lg; 
                     }
                     .number{
                         font-style: italic;
                         font-weight: bold;
-                        font-family: 'roboto light';
+                        font-family: 'roboto light', sans-serif;
                         display: inline-block;
-                        font-size: $font-l;
-                        
+                        font-size: $font-size-lg; 
                     }
-                    
                 }
                 .add{
-                    border: 2px solid #FE6850;
+                    border: 2px solid map-get($colors, orange);
                     margin: 20px 5px 5px 5px;
                     padding: 5px;
                     :hover{
                         cursor: pointer;
                     }
                     span{
-                        color: #FE6850;
+                        color: map-get($colors, orange);
                     }
                     .check{
                         display: none;
                     }
-
                 }
                 .active{
-                    border: 2px solid #FE6850;
+                    border: 2px solid map-get($colors, orange);
                     margin: 20px 5px 5px 5px;
                     padding: 5px;
-                    background: #FE6850;
+                    background: map-get($colors, orange);
                     :hover{
                         cursor: pointer;
                     }
                     span{
-                        color: #fff;
+                        color: map-get($colors, white);
                     }
                     .cart{
                         display: none;
@@ -697,10 +830,10 @@
         }
         .burger{
             .p1{
-                background-image: url('../img/burger_1.jpg');
+                background-image: url('../img/burger_1.png');
             }
             .p2{
-                background-image: url('../img/burger_2.jpg');
+                background-image: url('../img/burger_2.png');
             }
             .p3{
                 background-image: url('../img/burger_3.png');
@@ -711,10 +844,10 @@
         }
         .other{
             .p1{
-                background-image: url('../img/other_1.jpg');
+                background-image: url('../img/other_1.png');
             }
             .p2{
-                background-image: url('../img/other_2.jpg');
+                background-image: url('../img/other_2.png');
             }
             .p3{
                 background-image: url('../img/other_3.png');
@@ -726,12 +859,8 @@
         .off{
             display: none;
         }
-
     }
-    
-
 }
-
 @include rwd(900px){
     .product{
         width: calc(100% - 250px);
@@ -752,83 +881,177 @@
         }
     }
 }
+@include rwd($iPad){
+    .product{
+        width: 96%;
+        margin: 0 2%;
+        .title{
+            input{
+                display: none;
+            }
+            button{
+                display: none;
+            }
+        }
+        .list{
+            li{
+                margin: 20px 2% 0 2%;
+            }
+        }
+    }
+}
+@include rwd(450px){
+    .product{
+        .list{
+            li{
+                width: 96%;
+            }
+        }
+    }
+}
+
+.bottom_container{
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    bottom: 0;
+    display: none;
+    .bottom_bar{
+        display: none;
+        height: 56px;
+        max-width: 1024px;
+        .item{
+            flex: 1;
+            background: map-get($colors, orange);
+            max-width: 100%;
+        }
+        .item_search{
+            background-image: url('../img/item_search.png');
+            background-repeat: no-repeat;
+            background-position: center;    
+        }
+        .item_input{
+            display: none;
+            input[type='search']{
+                margin: 12px 0;
+                height: 32px;
+                width: 90%;
+                padding: 8px;
+                border-radius: 2px;
+            }
+        }
+        .open{
+            display: block;
+            flex: 3;
+        }
+        .item_burger{
+            background-image: url('../img/item_burger.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .item_brunch{
+            background-image: url('../img/item_brunch.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .item_other{
+            background-image: url('../img/item_other.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .disappear{
+            display: none;
+        }
+
+    }
+}
+@include rwd($iPad){
+    .bottom_container{
+        display: block;
+    }
+}
 
 //page_register
 
 .content_child{
-    background: $color-b;
+    background: map-get($colors, dark-bg);
     height: auto;
     padding-top: 50px;
     padding-bottom: 30px;
-    color: $color-d;
+    color: map-get($colors, brown);
     text-align: center;
     >p{
-        font-size: $font-l;
+        font-size: $font-size-lg;
         margin: 5px;
         font-weight: bold;
     }
-    .register{
-        width: 600px;
-        margin: 0 auto;
-        height: 350px;
-        background: $color-b;
-        border-top: 5px solid #FF5E45;
-        box-shadow: 5px 5px 5px #888888;
-        position: relative; 
-        h3{
-            font-size: $font-m;
-            font-weight: bold;
-            margin: 10px;
+}
+
+.register_block{
+    width: 600px;
+    margin: 0 auto;
+    height: 350px;
+    background: map-get($colors, dark-bg);
+    border-top: 5px solid map-get($colors, orange);
+    box-shadow: 5px 5px 5px map-get($colors, shadow);
+    position: relative; 
+    font-size: $font-size-base;
+    h5{
+        font-size: $h5-font-size;
+        font-weight: bold;
+        margin: 10px;
+    }
+    .pact{
+        width: 50%;
+        float: left;
+        text-align: left;
+        padding: 20px 10px; 
+        line-height: 20px;
+    }
+    .information{
+        width: 50%;
+        float: left;
+        text-align: left;
+        padding: 20px 10px;
+        p{
+            margin-bottom: 5px;
         }
+        input[type='email'], input[type='password']{
+            @include input_private;
+            font-family: 'FontAwesome';
+        }
+        a{
+            text-decoration: none;
+            color: map-get($colors, orange);
+            display: block;
+            margin-top: 2px;
+        }
+        input[type='submit']{
+            float: right;
+            width: 100px;
+        }
+    }
+}
+@include rwd($iPad){
+    .register_block{
+        width: 90%;
+        height: auto;
         .pact{
-            width: 50%;
-            float: left;
-            text-align: left;
-            padding: 20px 10px 20px 10px; 
-            font-size: $font-m;
-            line-height: 20px;
+            width: 96%;
         }
         .information{
-            width: 50%;
-            float: left;
-            text-align: left;
-            padding: 20px 10px 20px 10px;
-            p{
-                margin-bottom: 5px;
+            width: 96%;
+            input[type='submit']{
+                width: 40%;
             }
-            input{
-                line-height: 20px;
-            }
-            a{
-                text-decoration: none;
-                color: #FF5E45;
-                display: block;
-                margin-top: 2px;
-            }
-            .text{
-                padding: 5px;
-                border-radius: 5px;
-                border-top: 2px inset rgba(0, 0, 0, 0.5);
-                border-left: 2px inset rgba(0, 0, 0, 0.5);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-                border-right: 1px solid rgba(0, 0, 0, 0.1);
-                position: relative;
-                font-family: 'FontAwesome';
-                // background-image: url('../img/email.png');
-                // background-size: 30px 30px;
-                // background-repeat: no-repeat;
-                // background-position: 20px 0;
-                // padding-left: 20px;
-            }
-            .text:focus{
-                outline: 2px solid rgba(245, 108, 35, 0.7);
-            }
-            .send{
-                padding: 5px 45px;
-                position: absolute;
-                bottom: 20px;
-                right: 40px;
-
+        }
+    }
+}
+@include rwd($iPhone5){
+    .register_block{
+        .information{
+            input[type='submit']{
+                width: 100%;
             }
         }
     }
@@ -836,18 +1059,19 @@
 
 //page_login
 
-.login{
+.login_block{
     width: 300px;
     margin: 0 auto;
     height: 350px;
-    background: $color-b;
-    border-top: 5px solid #FF5E45;
-    box-shadow: 5px 5px 5px #888888;
+    background: map-get($colors, dark-bg);
+    border-top: 5px solid map-get($colors, orange);
+    box-shadow: 5px 5px 5px map-get($colors, shadow);
     position: relative;
     text-align: left;
-    padding: 20px 20px;
-    h3{    
-        font-size: $font-m;
+    padding: 20px;
+    font-size: $font-size-base;
+    h5{    
+        font-size: $h5-font-size;
         font-weight: bold;
         margin: 10px;
         text-align: center;
@@ -856,40 +1080,25 @@
     p{
         margin-bottom: 5px;
     }
-    input{
-        line-height: 20px;
-        width: 100%;
+    input[type='email'], input[type='password']{
+       @include input_private;
+       font-family: 'FontAwesome';
     }
     .mention{
         text-decoration: none;
-        color: #FF5E45;
+        color: map-get($colors, orange);
         display: block;
         margin-top: 2px;
     }
-    .text{
-        padding: 5px;
-        border-radius: 5px;
-        border-top: 2px inset rgba(0, 0, 0, 0.5);
-        border-left: 2px inset rgba(0, 0, 0, 0.5);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-        position: relative;
-        font-family: 'FontAwesome';
-    }
-    .text:focus{
-        outline: 2px solid rgba(245, 108, 35, 0.7);
-    }
-    .button{
+    .button_block{
         width: 100%;
         text-align: center;
         margin-top: 50px;
-        // position: absolute;
-        // bottom: 50px;
         a{
             width: 110px;
             height: 32px;
         }
-        .submit{
+        input[type='submit']{
             width: 110px;
             height: 32px;
             margin-left: 10px;
@@ -899,18 +1108,17 @@
 @include rwd($iPhone5){
     .login{
         width: 90%;
-        .button{
+        .button_block{
             margin-top: 30px;
             a{
                 width: 100%;
                 margin-bottom: 10px;
             }
-            .submit{
+            input[type='submit']{
                 width: 100%;
                 margin-left: 0;
             }
         }
-    }
-    
+    }  
 } 
 

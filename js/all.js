@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     //滑動至斷點
     $('.p1').click(function (e) {
         e.preventDefault();
@@ -23,16 +24,6 @@ $(document).ready(function () {
     });
 
     //menu彈出
-
-    // $('.logo').mouseenter(function () {
-    //     $(this).addClass('animated rubberBand');
-    //     $('.menu').fadeIn('slow');
-    // });
-    // $('.navbar').mouseleave(function () {
-    //     $('.menu').fadeOut('slow');
-    //     $('.logo').removeClass('animated rubberBand');
-    // });
-
     $('.logo').mouseenter(function () {
         var innerWidth = window.innerWidth;
         if(innerWidth <= 768){
@@ -50,10 +41,6 @@ $(document).ready(function () {
             $('.logo').removeClass('animated rubberBand');
         }
     });
-
-
-
-
 
     //愛心
     $('.heart').click(function () {
@@ -74,11 +61,11 @@ $(document).ready(function () {
         let countCheck = $('body .active').length;
         console.log(countCheck);
         if (countCheck > 0) {
-            $('.circle').show();
-            $('.circle span').empty().append(countCheck);
+            $('.total').show();
+            $('.total span').empty().append(countCheck);
         }
         else {
-            $('.circle').hide();
+            $('.total').hide();
         }
     });
 
@@ -128,12 +115,51 @@ $(document).ready(function () {
     });
 
     //burger
-    $('.rwdMenu').click(function(){
+    $('.rwd_menu').click(function(){
         $('.menu').toggleClass('pop animated bounceInLeft', 1000);
+        $('.pop').show();
+        if(innerWidth > 768){
+            $('.pop').hide();
+        }
     });
 
+    //bottom_bar
+    $('.item_burger').click(function () {
+        $('.brunch').addClass('off');
+        $('.other').addClass('off');
+        $('.burger').removeClass('off');
+        $('body').animate({scrollTop: 400}, 1000);
+    });
+    $('.item_brunch').click(function () {
+        $('.burger').addClass('off');
+        $('.other').addClass('off');
+        $('.brunch').removeClass('off');
+        $('body').animate({scrollTop: 400}, 1000);
+    });
+    $('.item_other').click(function () {
+        $('.brunch').addClass('off');
+        $('.burger').addClass('off');
+        $('.other').removeClass('off');
+        $('body').animate({scrollTop: 400}, 1000);
+    });
+    $('.item_search').click(function(){
+        $('.item_input').toggleClass('open');
+        $('.item_burger').toggleClass('disappear');
+        $('.item_brunch').toggleClass('disappear');
+        $('.item_other').toggleClass('disappear');
+    });
 
+    //停止連結
+    $('.halt').click(function(e){
+        e.preventDefault();
+    });
+   
 });
+
+
+
+
+
 
 
 
