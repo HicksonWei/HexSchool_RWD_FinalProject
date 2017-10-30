@@ -6,21 +6,21 @@ $(document).ready(function () {
         let p1Target = $(this).attr('href');
         let p1TargetPos = $(p1Target).offset().top - 50;
         console.log(p1TargetPos);
-        $('body').animate({ scrollTop: p1TargetPos }, 1000);
+        $('html, body').animate({ scrollTop: p1TargetPos }, 1000);
     });
     $('.p2').click(function (e) {
         e.preventDefault();
         let p2Target = $(this).attr('href');
         let p2TargetPos = $(p2Target).offset().top - 55;
         console.log(p2TargetPos);
-        $('body').animate({ scrollTop: p2TargetPos }, 1000);
+        $('html, body').animate({ scrollTop: p2TargetPos }, 1000);
     });
     $('.p3').click(function (e) {
         e.preventDefault();
         let p3Target = $(this).attr('href');
         let p3TargetPos = $(p3Target).offset().top - 50;
         console.log(p3TargetPos);
-        $('body').animate({ scrollTop: p3TargetPos }, 1000);
+        $('html, body').animate({ scrollTop: p3TargetPos }, 1000);
     });
 
     //menu彈出
@@ -124,23 +124,23 @@ $(document).ready(function () {
     });
 
     //bottom_bar
-    $('.item_burger').click(function () {
+    $('.item_burger').click(function (e) {
         $('.brunch').addClass('off');
         $('.other').addClass('off');
         $('.burger').removeClass('off');
-        $('body').animate({scrollTop: 400}, 1000);
+        $('html, body').animate({scrollTop: 400}, 1000);
     });
-    $('.item_brunch').click(function () {
+    $('.item_brunch').click(function (e) {
         $('.burger').addClass('off');
         $('.other').addClass('off');
         $('.brunch').removeClass('off');
-        $('body').animate({scrollTop: 400}, 1000);
+        $('html, body').animate({scrollTop: 400}, 1000);
     });
-    $('.item_other').click(function () {
+    $('.item_other').click(function (e) {
         $('.brunch').addClass('off');
         $('.burger').addClass('off');
         $('.other').removeClass('off');
-        $('body').animate({scrollTop: 400}, 1000);
+        $('html, body').animate({scrollTop: 400}, 1000);
     });
     $('.item_search').click(function(){
         $('.item_input').toggleClass('open');
@@ -155,7 +155,6 @@ $(document).ready(function () {
     });
    
 });
-
 
 
 
