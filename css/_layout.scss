@@ -173,6 +173,7 @@
     background-image: url('../img/header_desktop.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 420px;
     position: relative;
     overflow: hidden;
@@ -203,15 +204,10 @@
 }
 @include rwd($iPad){
     .header{
+        background-image: url('../img/header_mobile.png');
         .banner{
             width: 90%;
         }
-    }
-}
-@include rwd($iPhone5){
-    .header{
-        background-image: url('../img/header_mobile.png');
-        background-position: center;
     }
 }
 
@@ -416,9 +412,11 @@
         }
         .form{
             padding: 0 20px 20px 40px;
-            p{
+            label{
+                display: block;
                 margin: 10px 0;
                 font-size: $font-size-base;
+                cursor: pointer;
             }
             input[type='text']{
                 @include input_private;
@@ -1013,12 +1011,13 @@
         float: left;
         text-align: left;
         padding: 20px 10px;
-        p{
+        label{
+            display: block;
             margin-bottom: 5px;
+            cursor: pointer;
         }
         input[type='email'], input[type='password']{
             @include input_private;
-            font-family: 'FontAwesome';
         }
         a{
             text-decoration: none;
@@ -1077,8 +1076,10 @@
         text-align: center;
         margin-bottom: 20px;
     }
-    p{
+    label{
+        display: block;
         margin-bottom: 5px;
+        cursor: pointer;
     }
     input[type='email'], input[type='password']{
        @include input_private;

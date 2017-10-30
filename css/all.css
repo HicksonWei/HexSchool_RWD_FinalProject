@@ -219,6 +219,7 @@ button {
   background-image: url("../img/header_desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 420px;
   position: relative;
   overflow: hidden; }
@@ -246,13 +247,10 @@ button {
         margin: 0 5px; }
 
 @media (max-width: 768px) {
-  .header .banner {
-    width: 90%; } }
-
-@media (max-width: 320px) {
   .header {
-    background-image: url("../img/header_mobile.png");
-    background-position: center; } }
+    background-image: url("../img/header_mobile.png"); }
+    .header .banner {
+      width: 90%; } }
 
 .secret {
   background: #EFE9E7;
@@ -412,9 +410,11 @@ button {
       height: 350px; }
   .reservation ul .form {
     padding: 0 20px 20px 40px; }
-    .reservation ul .form p {
+    .reservation ul .form label {
+      display: block;
       margin: 10px 0;
-      font-size: 1rem; }
+      font-size: 1rem;
+      cursor: pointer; }
     .reservation ul .form input[type='text'] {
       padding: 5px;
       border-radius: 5px;
@@ -424,6 +424,7 @@ button {
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       line-height: 20px;
       width: 100%;
+      font-family: "FontAwesome";
       font-size: 1rem; }
       .reservation ul .form input[type='text']:focus {
         outline: 2px solid rgba(245, 108, 35, 0.7); }
@@ -861,8 +862,10 @@ button {
     float: left;
     text-align: left;
     padding: 20px 10px; }
-    .register_block .information p {
-      margin-bottom: 5px; }
+    .register_block .information label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer; }
     .register_block .information input[type='email'], .register_block .information input[type='password'] {
       padding: 5px;
       border-radius: 5px;
@@ -872,7 +875,7 @@ button {
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       line-height: 20px;
       width: 100%;
-      font-family: 'FontAwesome'; }
+      font-family: "FontAwesome"; }
       .register_block .information input[type='email']:focus, .register_block .information input[type='password']:focus {
         outline: 2px solid rgba(245, 108, 35, 0.7); }
     .register_block .information a {
@@ -917,8 +920,10 @@ button {
     margin: 10px;
     text-align: center;
     margin-bottom: 20px; }
-  .login_block p {
-    margin-bottom: 5px; }
+  .login_block label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer; }
   .login_block input[type='email'], .login_block input[type='password'] {
     padding: 5px;
     border-radius: 5px;
@@ -928,6 +933,7 @@ button {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     line-height: 20px;
     width: 100%;
+    font-family: "FontAwesome";
     font-family: 'FontAwesome'; }
     .login_block input[type='email']:focus, .login_block input[type='password']:focus {
       outline: 2px solid rgba(245, 108, 35, 0.7); }
